@@ -10,9 +10,3 @@ RUN mkdir -p /srv/var && \
   rm -f /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 && \
   mv /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/ /srv/var/phantomjs && \
   ln -s /srv/var/phantomjs/bin/phantomjs /usr/bin/phantomjs
-
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
-
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
